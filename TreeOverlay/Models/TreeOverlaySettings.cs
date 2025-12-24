@@ -11,7 +11,6 @@ public class TreeOverlaySettings
     public double Opacity { get; set; } = 1.0;
     public bool AlwaysOnTop { get; set; } = true;
     public bool ClickThrough { get; set; } = true;
-    public bool RunOnStartup { get; set; } = false;
     public string GifPath { get; set; } = string.Empty;
     public List<string> RecentGifs { get; set; } = new();
     public bool OverlayRunning { get; set; } = true;

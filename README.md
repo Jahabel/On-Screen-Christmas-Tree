@@ -20,28 +20,6 @@ msbuild TreeOverlay.sln /p:Configuration=Release
 TreeOverlay\bin\Release\net8.0-windows\TreeOverlay.exe
 ```
 
-## Portable build (one-click share)
-
-Use the provided publish script to generate a self-contained, portable build that runs on another Windows 10/11 PC without installing .NET.
-
-```powershell
-# from the repo root
-./publish.ps1
-```
-
-Output: `publish\portable\TreeOverlay.exe`
-
-## Installer (Inno Setup)
-
-1. Run `publish.ps1` first to produce the portable build.
-2. Open `installer.iss` in Inno Setup and build the installer.
-
-The installer:
-- Installs per-user to `%LOCALAPPDATA%\TreeOverlay` (no admin rights required).
-- Adds a Start Menu shortcut.
-- Offers an optional “Run on startup” task.
-
 ## Notes
 - Settings persist to `%APPDATA%\TreeOverlay\settings.json`.
-- A default `tree.gif` is embedded and written to `%APPDATA%\TreeOverlay\tree.gif` on first run so the overlay runs immediately.
-- You can change the GIF via the Control Panel “Browse” button; recently used GIFs are shown in the list.
+- A default `tree.gif` is embedded and written to `%APPDATA%\\TreeOverlay\\tree.gif` on first run so the overlay runs immediately.
