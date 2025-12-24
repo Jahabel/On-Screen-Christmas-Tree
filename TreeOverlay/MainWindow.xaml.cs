@@ -14,6 +14,7 @@ namespace TreeOverlay;
 public partial class MainWindow : Window
 {
     private readonly SettingsService _settingsService = new();
+    private readonly StartupService _startupService = new();
     private TreeOverlaySettings _settings;
     private OverlayWindow? _overlayWindow;
     private Forms.NotifyIcon? _notifyIcon;
@@ -87,6 +88,7 @@ public partial class MainWindow : Window
         OpacitySlider.Value = _settings.Opacity;
         AlwaysOnTopCheckBox.IsChecked = _settings.AlwaysOnTop;
         ClickThroughCheckBox.IsChecked = _settings.ClickThrough;
+        RunOnStartupCheckBox.IsChecked = _settings.RunOnStartup || _startupService.IsRunOnStartupEnabled();
         GifPathTextBox.Text = _settings.GifPath;
         RefreshRecentList();
         UpdateScaleText();
