@@ -1,0 +1,14 @@
+<Window x:Class="TreeOverlay.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Topmost="True"
+        SizeToContent="WidthAndHeight">
+  <Grid>
+    <Image x:Name="OverlayImage" RenderOptions.BitmapScalingMode="HighQuality" />
+  </Grid>
+</Window>
