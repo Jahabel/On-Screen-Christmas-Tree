@@ -133,6 +133,8 @@ public partial class MainWindow : Window
         AlwaysOnTopCheckBox.Unchecked += (_, _) => ToggleAlwaysOnTop(false);
         ClickThroughCheckBox.Checked += (_, _) => ToggleClickThrough(true);
         ClickThroughCheckBox.Unchecked += (_, _) => ToggleClickThrough(false);
+        RunOnStartupCheckBox.Checked += (_, _) => ToggleRunOnStartup(true);
+        RunOnStartupCheckBox.Unchecked += (_, _) => ToggleRunOnStartup(false);
         BrowseGifButton.Click += (_, _) => BrowseGif();
         StartStopButton.Click += (_, _) => ToggleOverlay();
         ResetButton.Click += (_, _) => ResetDefaults();
@@ -153,6 +155,13 @@ public partial class MainWindow : Window
     {
         _settings.ClickThrough = value;
         SaveAndUpdate();
+    }
+
+    private void ToggleRunOnStartup(bool value)
+    {
+        _settings.RunOnStartup = value;
+        _startupService.SetRunOnStartup(value);
+        SaveSettings();
     }
 
     private void BrowseGif()

@@ -37,6 +37,7 @@
             <StackPanel Orientation="Horizontal" Spacing="12">
               <CheckBox x:Name="AlwaysOnTopCheckBox" Content="Always-on-top" />
               <CheckBox x:Name="ClickThroughCheckBox" Content="Click-through" />
+              <CheckBox x:Name="RunOnStartupCheckBox" Content="Run on startup" />
             </StackPanel>
           </StackPanel>
         </GroupBox>
